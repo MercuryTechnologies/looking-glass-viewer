@@ -1,0 +1,22 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-site:
+    if: github.repository == 'mercurytechnologies/looking-glass-viewer'
+    name: Build the site
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build it
+        run: |
+          yarn install && yarn build
+      - name: ship it
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Looking Glass 🔎</title>
+    </head>
+    <body>
+        <div id="settings" class="floating-box">
+            <h1>Looking Glass Graph Viewer 🔎</h1>
+
+            <div>
+                <label>
+                    Paste JSON data
+                    <input
+                        type="text"
+                        id="paste-json"
+                        placeholder="JSON goes here"
+                    />
+                </label>
+            </div>
+            <p id="loading-indication" style="display: none">Loading...</p>
+            <p id="failures"></p>
+        </div>
+        <div id="properties-table" class="floating-box">
+            <h2>Properties</h2>
+            <h3 data-node-name></h3>
+            <table id="node-data-view" data-node-table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div id="sigma-container"></div>
+        <script src="build/bundle.js"></script>
+    </body>
+</html>
