@@ -5,13 +5,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "kotatsu serve -p 4001 --typescript src/index.ts --public / .",
-    "build": "webpack && mkdir -p public/ && cp -R build/ index.html style.css public/"
+    "start": "webpack serve --port 4001",
+    "build": "webpack"
   },
   "devDependencies": {
-    "kotatsu": "^0.22.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "ts-loader": "^9.4.1",
     "typescript": "^4.7.4",
-    "webpack-cli": "^4.10.0"
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@types/papaparse": "^5.3.2",
